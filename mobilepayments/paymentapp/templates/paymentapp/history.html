@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Transfer History</title>
+    </head>
+    <body>
+        
+        {% for sent_amount in sent_amounts %}
+        <table>
+            <th>
+                <td>Recipient</td>
+                <td>Amount</td>
+            </th>
+            <tr>
+                <td>{{ sent_amount.0 }}</td>
+                <td>{{ sent_amount.1 }}</td>
+            </tr>
+        </table>
+        <hr>
+        {% endfor %}    
+
+        {% for received_amount in received_amounts %}
+        <table>
+            <th>
+                <td>Sender</td>
+                <td>Amount</td>
+            </th>
+            <tr>
+                <td>{{ received_amount.0 }}</td>
+                <td>{{ received_amount.1 }}</td>
+            </tr>
+        </table>
+        <hr>
+        {% endfor %}    
+        
+    </body>
+</html>
