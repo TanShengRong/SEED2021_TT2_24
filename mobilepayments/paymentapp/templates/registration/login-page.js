@@ -26,12 +26,12 @@ loginButton.addEventListener("click", (e) => {
     redirect: 'follow'
     };
 
-    fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/login", requestOptions)
+    fetch("https://cors-anywhere.herokuapp.com/https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/login", requestOptions)
     .then(function (response) {
         if (response.status == 200) {
             console.log('success')
             alert("You have successfully logged in.");
-            location.replace(".Account/account.html");
+            location.replace("Account/account.html");
             // return response.json(); // for checking purpose
         } else { loginErrorMsg.style.opacity = 1; }
     })
