@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash #want 
 import jwt
 import datetime
 from functools import wraps
+import requests
 
 app = Flask(__name__)
 
@@ -46,3 +47,4 @@ def get_all_users():
         output.append(user_data)    
 
     return jsonify({'users' : output})
+
