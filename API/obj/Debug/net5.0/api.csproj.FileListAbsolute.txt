@@ -1,0 +1,7 @@
+C:\Users\kham_\SEED2021_TT2_24\SEED2021_TT2_24\api\obj\Debug\net5.0\api.csprojAssemblyReference.cache
+C:\Users\kham_\SEED2021_TT2_24\SEED2021_TT2_24\api\obj\Debug\net5.0\api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kham_\SEED2021_TT2_24\SEED2021_TT2_24\api\obj\Debug\net5.0\api.AssemblyInfoInputs.cache
+C:\Users\kham_\SEED2021_TT2_24\SEED2021_TT2_24\api\obj\Debug\net5.0\api.AssemblyInfo.cs
+C:\Users\kham_\SEED2021_TT2_24\SEED2021_TT2_24\api\obj\Debug\net5.0\api.csproj.CoreCompileInputs.cache
+C:\Users\kham_\SEED2021_TT2_24\SEED2021_TT2_24\api\obj\Debug\net5.0\api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kham_\SEED2021_TT2_24\SEED2021_TT2_24\api\obj\Debug\net5.0\api.MvcApplicationPartsAssemblyInfo.cache
