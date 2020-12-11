@@ -591,11 +591,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-3\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24\\api\\api.csproj",
+      "projectPath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-3\\api\\api.csproj",
       "packagesPath": "C:\\Users\\kham_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24\\api\\obj\\",
+      "outputPath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-3\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kham_\\AppData\\Roaming\\NuGet\\NuGet.Config"

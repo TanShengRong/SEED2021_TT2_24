@@ -31,7 +31,7 @@ loginButton.addEventListener("click", (e) => {
         if (response.status == 200) {
             console.log('success')
             alert("You have successfully logged in.");
-            location.replace(".Balance/balance.html");
+            location.replace(".Account/account.html");
             // return response.json(); // for checking purpose
         } else { loginErrorMsg.style.opacity = 1; }
     })

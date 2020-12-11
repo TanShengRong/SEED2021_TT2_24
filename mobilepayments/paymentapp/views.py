@@ -77,16 +77,21 @@ def transfer(request):
         recipient_object.balance = float(recipient_object.balance) + amount
         sender_object.save()
         recipient_object.save()
-        return redirect('index')
+        return redirect('/history/')
 
     else: 
         return render(request, "paymentapp/transfer.html",{
         "username": username
         })
-
         
 def balance(request):
-    pass
+    username = request.user.username
+    user_object = AccountDetails.objects.get(username=username)
+    balance = user_object.balance
+    return render(request, "paymentapp/balance.html",{
+        "username": username,
+        "balance": balance
+        })
 
 def history(request):
     username = request.user.username
@@ -97,10 +102,10 @@ def history(request):
     for id in range(1, num_transactions + 1):
         selected_transaction = TransactionAmounts.objects.get(id=str(id))
         if selected_transaction.sender == username:
-            sent_amount = selected_transaction.receiver, selected_transaction.amount
+            sent_amount = selected_transaction.receiver, selected_transaction.amount, selected_transaction.date.strftime("%Y:%m:%d")
             sent_amounts.append(sent_amount)
         elif selected_transaction.receiver == username:
-            received_amount = selected_transaction.sender, selected_transaction.amount
+            received_amount = selected_transaction.sender, selected_transaction.amount, selected_transaction.date.strftime("%Y:%m:%d")
             received_amounts.append(received_amount)
     
     return render(request, "paymentapp/history.html",{

@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 class ModelName(models.Model):
     name = models.CharField(max_length=50)
@@ -50,3 +51,4 @@ class TransactionAmounts(models.Model):
     sender = models.CharField(max_length=50)
     receiver = models.CharField(max_length=50)
     amount = models.FloatField()
+    date = models.DateTimeField(auto_now_add=True)

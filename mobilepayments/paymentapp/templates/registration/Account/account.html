@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account details</title>
+  <link rel="stylesheet" href="account.css">
+  <script defer src="account.js">
+  </script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="account">Welcome to digibank</h1>
+    
+    <!--
+    <div id="balance-error-msg-holder">
+      <p id="balance-error-msg">Session Timeout <span id="error-msg-second-line">Please login again</span></p>
+    </div>
+    -->
+
+    <div id="balance-details-holder">
+      <p id="cur-balance-details">Balance in the account is $</p>      
+      <p id="multi-balance-details">Balance in the account is $</p>      
+      <p id="savings-balance-details">Balance in the account is $</p>      
+      <table>
+         <tr>
+            <td>sample account name <span id="details-second-line">sample account number</span></td>
+            <td></td>
+         </tr>
+         <tr>
+             <td></td>
+            <td>Balance <span id="details-second-line">sample balance amount</span></td>    
+          </tr>
+      </table> 
+      <!--
+      <p id="balance-details">Balance in the account is $</p>  
+      -->    
+    </div>
+
+    <input type="submit" value="Pay & Transfer" id="transfer-form-submit"/>
+  
+  </main>
+</body>
+
+</html>
