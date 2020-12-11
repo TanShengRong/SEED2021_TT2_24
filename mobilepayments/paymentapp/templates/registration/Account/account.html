@@ -6,7 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Account details</title>
   <link rel="stylesheet" href="account.css">
-  <script defer src="account.js">
+  <script>
+  // $(function(){
+  //   $("#nav-placeholder").load("navbar.html");
+  // });
+    var myHeaders = new Headers();
+    myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
+    myHeaders.append("Content-Type", "application/json");
+    var raw = JSON.stringify({"custID":7});
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+    };
+
+    fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/accounts/view", requestOptions)
+    .then(response => response.text())
+    .then(function(result) {
+    var obj = JSON.parse(result);
+    document.getElementById("cur-balance-details").innerHTML = "Balance in the current account is $" + obj[0].availableBal;
+    document.getElementById("multi-balance-details").innerHTML = "Balance in the multiplier account is $" + obj[1].availableBal;
+    document.getElementById("savings-balance-details").innerHTML = "Balance in the savings account is $" + obj[2].availableBal;
+    })
+    .catch(error => console.log('error', error));
+
+    const transferButton = document.getElementById("transfer-form-submit");
+    const historyButton = document.getElementById("history-form-submit");
+
+    transferButton.addEventListener("click", (e) => {
+      location.replace("transfer.html");}
+
+    historyButton.addEventListener("click", (e) => {
+      location.replace("transaction-history.html");}
+
   </script>
 </head>
 
@@ -16,32 +49,6 @@
 <div id="nav-placeholder">
 
 </div>
-
-<script>
-// $(function(){
-//   $("#nav-placeholder").load("nav.html");
-// });
-	var myHeaders = new Headers();
-	myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
-	myHeaders.append("Content-Type", "application/json");
-	var raw = JSON.stringify({"custID":7});
-	var requestOptions = {
-	method: 'POST',
-	headers: myHeaders,
-	body: raw,
-	redirect: 'follow'
-	};
-
-	fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/accounts/view", requestOptions)
-	.then(response => response.text())
-	.then(function(result) {
-	var obj = JSON.parse(result);
-	document.getElementById("cur-balance-details").innerHTML = "Balance in the current account is $" + obj[0].availableBal;
-	document.getElementById("multi-balance-details").innerHTML = "Balance in the multiplier account is $" + obj[1].availableBal;
-	document.getElementById("savings-balance-details").innerHTML = "Balance in the savings account is $" + obj[2].availableBal;
-	})
-	.catch(error => console.log('error', error));
-</script>
 <!--end of Navigation bar-->
 
   <main id="main-holder">
@@ -73,6 +80,7 @@
     </div>
 
     <input type="submit" value="Pay & Transfer" id="transfer-form-submit"/>
+    <input type="submit" value="Transaction History" id="history-form-submit"/>
   
   </main>
 </body>
