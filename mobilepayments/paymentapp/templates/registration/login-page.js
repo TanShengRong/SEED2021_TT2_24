@@ -6,7 +6,7 @@ loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const username = loginForm.username.value;
     const password = loginForm.password.value;
-    
+
     var myHeaders = new Headers();
     myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
     myHeaders.append("Content-Type", "text/plain");
