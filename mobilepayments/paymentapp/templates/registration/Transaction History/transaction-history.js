@@ -1,3 +1,4 @@
+blockchainViewRouter.post('/')
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
@@ -7,13 +8,7 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    // url = 'https://cors-anywhere.herokuapp.com/https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/login'
-    // fetch(url).then(response => {
-    //     return response.json();
-    // })
-    // .then(login=>{
-    //     console.log(login);
-    // })
+
     var myHeaders = new Headers();
     myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
     myHeaders.append("Content-Type", "text/plain");
@@ -27,7 +22,7 @@ loginButton.addEventListener("click", (e) => {
     redirect: 'follow'
     };
 
-    fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/login", requestOptions)
+    fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/history", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));

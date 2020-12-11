@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EaL2k1zJoelF3fWTWemlQBYsVcGDKPVTa1tDyvtmfE+r2V30HeQCCnKspO7mRuwg+n8vYmvRpmWw0kf1uku95Q==",
+  "dgSpecHash": "kicbLjBSipMGn8DPR/TNhAaZqfoVuvoiA7O9z19iMF2T/AdG/+8ftJ9znLhYq0/OOosZT7DKeFRLp0Xa0Gqm0w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-3\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kham_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",
     "C:\\Users\\kham_\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.0\\microsoft.aspnetcore.authentication.openidconnect.5.0.0.nupkg.sha512",
