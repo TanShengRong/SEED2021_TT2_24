@@ -18,9 +18,29 @@
 </div>
 
 <script>
-$(function(){
-  $("#nav-placeholder").load("nav.html");
-});
+// $(function(){
+//   $("#nav-placeholder").load("nav.html");
+// });
+	var myHeaders = new Headers();
+	myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
+	myHeaders.append("Content-Type", "application/json");
+	var raw = JSON.stringify({"custID":7});
+	var requestOptions = {
+	method: 'POST',
+	headers: myHeaders,
+	body: raw,
+	redirect: 'follow'
+	};
+
+	fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/accounts/view", requestOptions)
+	.then(response => response.text())
+	.then(function(result) {
+	var obj = JSON.parse(result);
+	document.getElementById("cur-balance-details").innerHTML = "Balance in the account is $" + obj[0].availableBal;
+	document.getElementById("multi-balance-details").innerHTML = "Balance in the account is $" + obj[1].availableBal;
+	document.getElementById("savings-balance-details").innerHTML = "Balance in the account is $" + obj[2].availableBal;
+	})
+	.catch(error => console.log('error', error));
 </script>
 <!--end of Navigation bar-->
 
@@ -37,7 +57,7 @@ $(function(){
       <p id="cur-balance-details">Balance in the account is $</p>      
       <p id="multi-balance-details">Balance in the account is $</p>      
       <p id="savings-balance-details">Balance in the account is $</p>      
-      <table>
+      <!-- <table>
          <tr>
             <td>sample account name <span id="details-second-line">sample account number</span></td>
             <td></td>
@@ -46,7 +66,7 @@ $(function(){
              <td></td>
             <td>Balance <span id="details-second-line">sample balance amount</span></td>    
           </tr>
-      </table> 
+      </table>  -->
       <!--
       <p id="balance-details">Balance in the account is $</p>  
       -->    
