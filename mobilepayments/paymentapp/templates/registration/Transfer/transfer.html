@@ -21,12 +21,12 @@
         <main id="main-holder">
             <h1 id="history-header">Making a Transfer</h1>
 
-        <form style="text-align: left;" action="{% url 'transfer' %}" method="POST">
+        <form style="text-align: left;" action="{% url 'transfer' %}" method="POST" id="transfer-form">
             {% csrf_token %}
             <input type="hidden" name="username" value="{{ username }}" />
-            Recipient Username: <input type="text" name="recipient" value="" /><br>
-            Transaction Amount: <input type="number" name="transaction_amount" value="transaction_amount" />
-            <br></nr><input type="submit" value="Make Transfer" />
+            Recipient Username: <input type="text" name="recipient" value="" id="recipient-form-submit" class="transfer-form-field"/><br>
+            Transaction Amount: <input type="number" name="transaction_amount" value="transaction_amount" id="amount-form-submit" class="transfer-form-field"/>
+            <br></nr><input type="submit" value="Make Transfer" id="transfer-form-submit"/>
         </form>
 
     </body>
