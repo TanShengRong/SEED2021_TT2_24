@@ -20,5 +20,5 @@ var raw = JSON.stringify({"custID":7});
 const transferButton = document.getElementById("transfer-form-submit");
 
 transferButton.addEventListener("click", (e) => {
-    location.replace(".Tranfer/transfer.html");
+    location.replace("..Tranfer/transfer.html");
 })
