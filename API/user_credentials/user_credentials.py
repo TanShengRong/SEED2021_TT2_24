@@ -17,7 +17,6 @@ db = SQLAlchemy(app)
 class User(db.Model):
     custID = db.Column(db.Integer, primary_key=True)
     #public id will be seen when decoded, so make it different from the id cause then itll be harder for people to figure out the users in the database
-    public_id = db.Column(db.String(50), unique=True)
     firstname = db.Column(db.String(50))
     lastname = db.Column(db.String(50))
     nric = db.Column(db.String(10))
@@ -27,8 +26,7 @@ class User(db.Model):
     email = db.Column(db.String(80))
     address = db.Column(db.String(80))
 
-app.route('/user', methods=['GET'])
-@token_required
+@app.route('/user', methods=['GET'])
 def get_all_users():
 
     users = User.query.all()
