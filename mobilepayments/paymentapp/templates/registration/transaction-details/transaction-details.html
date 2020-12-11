@@ -5,6 +5,18 @@
 	<title>Transaction history</title>
 </head>
 <body>
+  <!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+</script>
+<!--end of Navigation bar-->
+
 	<header><h1>Transaction Detail</h1></header>
 	<form method="post" action="{% url '' %}">
             {% csrf_token %}
