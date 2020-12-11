@@ -43,9 +43,13 @@
 	.catch(error => console.log('error', error));
 
   const transferButton = document.getElementById("transfer-form-submit");
+  const historyButton = document.getElementById("history-form-submit");
 
   transferButton.addEventListener("click", (e) => {
     location.replace("transfer.html");}
+
+  historyButton.addEventListener("click", (e) => {
+    location.replace("transaction-history.html");}
 
 </script>
 <!--end of Navigation bar-->
