@@ -25,22 +25,55 @@
 </div>
 
 <script>
-$(function(){
-  $("#nav-placeholder").load("nav.html");
-});
+// $(function(){
+//   $("#nav-placeholder").load("nav.html");
+// });
+const loginButton = document.getElementById("transfer-form-submit");
+const transferForm = document.getElementById("transfer-form");
+loginButton.addEventListener("click", (e) => {
+        var myHeaders = new Headers();
+        myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
+        myHeaders.append("Content-Type", "application/json");
+        
+        const recipient = parseInt(transferForm.recipient.value);
+        const transaction_amount = parseInt(transferForm.transaction_amount.value);
+        console.log(recipient, transaction_amount);
+        var raw = JSON.stringify({
+            "custID":24,
+            "payeeID": recipient,
+            "dateTime":"11/12/2020",
+            "amount": transaction_amount,
+            "expensesCat":"Others",
+            "eGift":false,
+            "message":"test1"});
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/transaction/add", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    });
 </script>
 <!--end of Navigation bar-->
 
         <main id="main-holder">
             <h1 id="history-header">Making a Transfer</h1>
 
-        <form style="text-align: left;" action="{% url 'transfer' %}" method="POST" id="transfer-form">
-            {% csrf_token %}
-            <input type="hidden" name="username" value="{{ username }}" />
-            Recipient Username: <input type="text" name="recipient" value="" id="recipient-form-submit" class="transfer-form-field"/><br>
-            Transaction Amount: <input type="number" name="transaction_amount" value="transaction_amount" id="amount-form-submit" class="transfer-form-field"/>
-            <br></nr><input type="submit" value="Make Transfer" id="transfer-form-submit"/>
-        </form>
+            <form id="transfer-form">
+                <input type="text" name="recipient" id="recipient-field" class="recipient-form-field" placeholder="recipient">
+                <input type="text" name="transaction_amount" id="transaction_amount-field" class="transaction_amount-form-field" placeholder="transaction_amount">
+                <input type="submit" value="Pay" id="transfer-form-submit">
+            </form> 
 
     </body>
 </html>
+
+
+
+
