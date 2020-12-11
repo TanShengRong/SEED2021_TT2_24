@@ -28,6 +28,7 @@ class Programmer(models.Model):
 
 class UserDetails(models.Model):
     custID = models.IntegerField()
+    username = models.CharField(max_length=50)
     firstName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
     nric = models.CharField(max_length=50)
@@ -39,12 +40,13 @@ class UserDetails(models.Model):
     accountName = models.CharField(max_length=50)
 
 class AccountDetails(models.Model):
-    custID = models.IntegerField()
+    username = models.CharField(max_length=50)
     accountName = models.CharField(max_length=50)
     accountNumber = models.IntegerField()
     linked = models.BooleanField()
+    balance = models.FloatField()
 
 class TransactionAmounts(models.Model):
-    senderID = models.IntegerField()
-    receiverID = models.IntegerField()
+    sender = models.CharField(max_length=50)
+    receiver = models.CharField(max_length=50)
     amount = models.FloatField()

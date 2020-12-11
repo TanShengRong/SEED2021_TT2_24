@@ -6,12 +6,12 @@
     </head>
     <body>
 
-        <form style="text-align: right;" action="{% url 'transfer' %}" method="POST">
+        <form style="text-align: left;" action="{% url 'transfer' %}" method="POST">
             {% csrf_token %}
-            <input type="hidden" name="id" value="{{ id }}" />
-            <input type="number" name="Recipient" value="recipient_id" />
-            <input type="number" name="transaction amount" value="transaction_amount" />
-            <input type="submit" value="Make Transfer" />
+            <input type="hidden" name="username" value="{{ username }}" />
+            Recipient Username: <input type="text" name="recipient" value="" /><br>
+            Transaction Amount: <input type="number" name="transaction_amount" value="transaction_amount" />
+            <br></nr><input type="submit" value="Make Transfer" />
         </form>
 
     </body>
