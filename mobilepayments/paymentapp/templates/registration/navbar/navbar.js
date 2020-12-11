@@ -17,6 +17,9 @@ const NavBar = () => {
                 <li>
                     <Link className = 'a' to='/'>Balance Page</Link>
                 </li>
+                <li>
+                    <Link className = 'a' to='/'>History Page</Link>
+                </li>
             </ul>
         </nav>
     );
