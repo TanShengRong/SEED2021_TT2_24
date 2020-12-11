@@ -31,6 +31,8 @@ def get_all_users():
 
     users = User.query.all()
 
+    r = requests.get('https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/users?')
+
     output = [] #need to generate a new list first because cannot output sqlalchemy results into a json object directly
 
     for user in users:
