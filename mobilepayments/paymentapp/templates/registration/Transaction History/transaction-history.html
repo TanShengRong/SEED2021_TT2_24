@@ -7,48 +7,38 @@
   <title>Transaction History</title>
   <link rel="stylesheet" href="transaction-history.css">
   <script>
-    //const histErrorMsg = document.getElementById("hist-error-msg");
-    //insert part about session timeout here possibly 
-    //    if (username === "user" && password === "web_dev") {
-    //        alert("You have successfully logged in.");
-    //        location.reload();
-    //    } else {
-    //        histErrorMsg.style.opacity = 1;
-    //    }
+  // $(function(){
+  //   $("#nav-placeholder").load("nav.html");
+  // });
+    var myHeaders = new Headers();
+    myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
+    myHeaders.append("Content-Type", "application/json");
+    var raw = JSON.stringify({"custID":7});
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+    };
 
-    </script>
+    fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/transaction/view", requestOptions)
+    .then(response => response.text())
+    .then(function(result) {
+    var obj = JSON.parse(result);
+    document.getElementById("custID").innerHTML = "From Customer " + obj[0].custID;
+    document.getElementById("payeeID").innerHTML = "to Customer" + obj[0].payeeID;
+    document.getElementById("date").innerHTML = "Date" + obj[0].date;
+    document.getElementById("amount").innerHTML = "Amount" + obj[0].amount;
+    document.getElementById("eGift").innerHTML = "eGift" + obj[0].eGift;
+    document.getElementById("Message").innerHTML = "Message" + obj[0].message;
+    document.getElementById("expense").innerHTML = "Expense Category" + obj[0].expenseCat;
+    })
+    .catch(error => console.log('error', error));
+  </script>
 </head>
 
 <body>
-  <script>
-// $(function(){
-//   $("#nav-placeholder").load("nav.html");
-// });
-	var myHeaders = new Headers();
-	myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
-	myHeaders.append("Content-Type", "application/json");
-	var raw = JSON.stringify({"custID":7});
-	var requestOptions = {
-	method: 'POST',
-	headers: myHeaders,
-	body: raw,
-	redirect: 'follow'
-	};
-
-	fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/transaction/view", requestOptions)
-	.then(response => response.text())
-	.then(function(result) {
-	var obj = JSON.parse(result);
-	document.getElementById("custID").innerHTML = "From Customer " + obj[0].custID;
-	document.getElementById("payeeID").innerHTML = "to Customer" + obj[0].payeeID;
-  document.getElementById("date").innerHTML = "Date" + obj[0].date;
-  document.getElementById("amount").innerHTML = "Amount" + obj[0].amount;
-  document.getElementById("eGift").innerHTML = "eGift" + obj[0].eGift;
-  document.getElementById("Message").innerHTML = "Message" + obj[0].message;
-  document.getElementById("expense").innerHTML = "Expense Category" + obj[0].expenseCat;
-	})
-	.catch(error => console.log('error', error));
-</script>
+  
   <main id="main-holder">
     <h1 id="history-header">Transaction History</h1>
     
