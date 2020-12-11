@@ -16,7 +16,6 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     custID = db.Column(db.Integer, primary_key=True)
-    #public id will be seen when decoded, so make it different from the id cause then itll be harder for people to figure out the users in the database
     firstname = db.Column(db.String(50))
     lastname = db.Column(db.String(50))
     nric = db.Column(db.String(10))
@@ -35,10 +34,15 @@ def get_all_users():
 
     for user in users:
         user_data = {} #create new dictionary for each user
-        user_data['public_id'] = user.public_id
-        user_data['name'] = user.name
-        user_data['password'] = user.password #it will be hashed 
-        user_data['admin'] = user.admin
+        user_data['custID'] = user.custID
+        user_data['firstname'] = user.firstname
+        user_data['lastname'] = user.lastname
+        user_data['nric'] = user.nric
+        user_data['gender'] = user.gender
+        user_data['age'] = user.age
+        user_data['phoneNumber'] = user.phoneNumber
+        user_data['email'] = user.email
+        user_data['address'] = user.address
         output.append(user_data)    
 
     return jsonify({'users' : output})
