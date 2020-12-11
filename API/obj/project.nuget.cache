@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dmVV64Qk6juSismZoCt+nrmhSUnKssmEVWtNPMMZSag7O0FZiWsl8cnL5jB6oTs/Ha8veqPoiETWQbEKhLFEeA==",
+  "dgSpecHash": "ZIup9Q0qQikJSNxXHm2BVss5glLv0lUxbjpLgqZoOn4eSit6TzHbuny29QJOCVNvB9XvYfiGFj91GTMnUXS7bQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kham_\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kham_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",

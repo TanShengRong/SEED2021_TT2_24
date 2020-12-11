@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\API\\API.csproj": {}
+    "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\api\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\API\\API.csproj": {
+    "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\API\\API.csproj",
+        "projectPath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\api\\API.csproj",
         "packagesPath": "C:\\Users\\kham_\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\API\\obj\\",
+        "outputPath": "C:\\Users\\kham_\\SEED2021_TT2_24\\SEED2021_TT2_24-1\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kham_\\AppData\\Roaming\\NuGet\\NuGet.Config"
