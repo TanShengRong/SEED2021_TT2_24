@@ -36,9 +36,9 @@
 	.then(response => response.text())
 	.then(function(result) {
 	var obj = JSON.parse(result);
-	document.getElementById("cur-balance-details").innerHTML = "Balance in the account is $" + obj[0].availableBal;
-	document.getElementById("multi-balance-details").innerHTML = "Balance in the account is $" + obj[1].availableBal;
-	document.getElementById("savings-balance-details").innerHTML = "Balance in the account is $" + obj[2].availableBal;
+	document.getElementById("cur-balance-details").innerHTML = "Balance in the current account is $" + obj[0].availableBal;
+	document.getElementById("multi-balance-details").innerHTML = "Balance in the multiplier account is $" + obj[1].availableBal;
+	document.getElementById("savings-balance-details").innerHTML = "Balance in the savings account is $" + obj[2].availableBal;
 	})
 	.catch(error => console.log('error', error));
 </script>
