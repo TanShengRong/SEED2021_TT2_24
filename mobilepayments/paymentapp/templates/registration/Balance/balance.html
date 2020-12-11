@@ -7,16 +7,29 @@
   <title>Balance</title>
   <link rel="stylesheet" href="balance.css">
   <script>
-    //const balanceErrorMsg = document.getElementById("balance-error-msg");
-    //insert part about session timeout here possibly 
-    //    if (username === "user" && password === "web_dev") {
-    //        alert("You have successfully logged in.");
-    //        location.reload();
-    //    } else {
-    //        balanceErrorMsg.style.opacity = 1;
-    //    }
+      var myHeaders = new Headers();
+      myHeaders.append("x-api-key", "WaiaCA14j19ibdk6JZR3D5E03Y8I21HQ3nDMh3c5");
+      myHeaders.append("Content-Type", "application/json");
 
-    </script>
+      var raw = JSON.stringify({"custID":7});
+
+      var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+      };
+
+      fetch("https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/accounts/view", requestOptions)
+      .then(response => response.text())
+      .then(function(result) {
+        var obj = JSON.parse(result);
+        document.getElementById("cur-balance-details").innerHTML = "Balance in the account is $" + obj[0].availableBal;
+        document.getElementById("multi-balance-details").innerHTML = "Balance in the account is $" + obj[1].availableBal;
+        document.getElementById("savings-balance-details").innerHTML = "Balance in the account is $" + obj[2].availableBal;
+      })
+      .catch(error => console.log('error', error));
+  </script>
 </head>
 
 <body>
@@ -30,7 +43,9 @@
     -->
 
     <div id="balance-details-holder">
-      <p id="balance-details">Balance in the account is $</p>      
+      <p id="cur-balance-details">Balance in the account is $</p>      
+      <p id="multi-balance-details">Balance in the account is $</p>      
+      <p id="savings-balance-details">Balance in the account is $</p>      
     </div>
   
   </main>
