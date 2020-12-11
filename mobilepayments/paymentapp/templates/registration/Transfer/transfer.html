@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transfer</title>
+        <link rel="stylesheet" href="transfer.css">
+        <script>
+        //const histErrorMsg = document.getElementById("hist-error-msg");
+        //insert part about session timeout here possibly 
+        //    if (username === "user" && password === "web_dev") {
+        //        alert("You have successfully logged in.");
+        //        location.reload();
+        //    } else {
+        //        histErrorMsg.style.opacity = 1;
+        //    }
+
+        </script>
+    </head>
+    <body>
+        <main id="main-holder">
+            <h1 id="history-header">Making a Transfer</h1>
+
+        <form style="text-align: left;" action="{% url 'transfer' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="username" value="{{ username }}" />
+            Recipient Username: <input type="text" name="recipient" value="" /><br>
+            Transaction Amount: <input type="number" name="transaction_amount" value="transaction_amount" />
+            <br></nr><input type="submit" value="Make Transfer" />
+        </form>
+
+    </body>
+</html>
