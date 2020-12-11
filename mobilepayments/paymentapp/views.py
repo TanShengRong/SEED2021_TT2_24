@@ -44,3 +44,21 @@ def register(request):
     
     context = {'form': form}
     return render(request, 'registration/register.html', context)
+
+def addinfo(request):
+    pass
+
+def transfer(request):
+    username = None
+    if request.user.is_authenticated():
+        username = request.user.username
+    else:
+        pass #Redirect
+    if request.method == 'POST':
+        
+
+def balance(request):
+    pass
+
+def history(request):
+    pass

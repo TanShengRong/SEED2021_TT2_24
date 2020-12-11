@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>The Index</title>
+    </head>
+    <body>
+
+        <form style="text-align: right;" action="{% url 'transfer' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{ id }}" />
+            <input type="number" name="Recipient" value="recipient_id" />
+            <input type="number" name="transaction amount" value="transaction_amount" />
+            <input type="submit" name="removewatch" value="Remove from Watchlist" />
+        </form>
+
+    </body>
+</html>
