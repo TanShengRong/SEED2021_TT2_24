@@ -7,6 +7,8 @@ import Login from "./components/pages/Login";
 import Transfer from "./components/pages/Transfer";
 import TransactionHistory from "./components/pages/TransactionHistory"
 import Balance from "./components/pages/Balance"
+import Header from "./components/layout/Header"
+import UserContext from './context/UserContext.js'
 
 export default function App() {
   const [userData, setUserData] = useState({                  
