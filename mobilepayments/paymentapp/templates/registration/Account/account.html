@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Balance</title>
-  <link rel="stylesheet" href="balance.css">
+  <title>Account details</title>
+  <link rel="stylesheet" href="account.css">
   <script>
     //const balanceErrorMsg = document.getElementById("balance-error-msg");
     //insert part about session timeout here possibly 
@@ -21,7 +21,7 @@
 
 <body>
   <main id="main-holder">
-    <h1 id="Balance-header">Balance</h1>
+    <h1 id="account">Welcome to digibank</h1>
     
     <!--
     <div id="balance-error-msg-holder">
@@ -30,8 +30,22 @@
     -->
 
     <div id="balance-details-holder">
-      <p id="balance-details">Balance in the account is $</p>      
+      <table>
+         <tr>
+            <td>sample account name <span id="details-second-line">sample account number</span></td>
+            <td></td>
+         </tr>
+         <tr>
+             <td></td>
+            <td>Balance <span id="details-second-line">sample balance amount</span></td>    
+          </tr>
+      </table> 
+      <!--
+      <p id="balance-details">Balance in the account is $</p>  
+      -->    
     </div>
+
+    <input type="submit" value="Pay & Transfer" id="transfer-form-submit"/>
   
   </main>
 </body>
