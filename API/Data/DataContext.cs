@@ -7,8 +7,7 @@ namespace API.Data
         public DataContext(DbContextOptions options) : base(options)
         {
         }
-
-        public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<LoginCredential> LoginCredentials { get; set; }
+        public DbSet<AccountInfo> AccountInfos { get; set; }
     }
 }  
