@@ -17,5 +17,5 @@ urlpatterns = [
     path('addinfo/',views.addinfo, name="addinfo"),
     path('transfer',views.transfer,name="transfer"),
     path('balance', views.balance,name="balance"),
-    path('history', views.balance,name="history")
+    path('history', views.history,name="history")
 ]
