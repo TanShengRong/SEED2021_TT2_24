@@ -6,12 +6,12 @@
     </head>
     <body>
 
-        <form style="text-align: right;" action="{% url 'transfer' %}" method="post">
+        <form style="text-align: right;" action="{% url 'transfer' %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="id" value="{{ id }}" />
             <input type="number" name="Recipient" value="recipient_id" />
             <input type="number" name="transaction amount" value="transaction_amount" />
-            <input type="submit" name="removewatch" value="Remove from Watchlist" />
+            <input type="submit" value="Make Transfer" />
         </form>
 
     </body>
