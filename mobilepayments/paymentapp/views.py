@@ -89,4 +89,20 @@ def balance(request):
     pass
 
 def history(request):
-    pass
+    username = request.user.username
+    num_transactions = TransactionAmounts.objects.all().count()
+    sent_amounts = []
+    received_amounts = []
+
+    for id in range(1, num_transactions + 1):
+        selected_transaction = TransactionAmounts.objects.get(id=str(id))
+        if selected_transaction.sender == username:
+            sent_amount = selected_transaction.receiver, SelectedObject.amount
+            sent_amounts.append(sent_amount)
+        elif selected_transaction.receiver == username:
+            received_amount = selected_transaction.sender, SelectedObject.amount
+            received_amounts.append(received_amount)
+        return render(request, "paymentapp/history.html",{
+            "sent_amounts": sent_amounts,
+            "received_amounts": received_amounts
+        })
